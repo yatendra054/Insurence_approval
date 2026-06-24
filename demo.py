@@ -1,4 +1,4 @@
-from src.logger import logging
+from src.pipline.training_pipeline import TrainPipeline
 
-logging.warning("This is a warning message.")
-logging.error("This is an error message.")
+pipline = TrainPipeline()
+pipline.run_pipeline()
