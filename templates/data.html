@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Vehicle Insurance Prediction</title>
+    <link rel="stylesheet" href="/static/css/style.css">
+</head>
+
+<body>
+
+<div class="container">
+
+    <h1>🚗 Vehicle Insurance Prediction</h1>
+    <p class="subtitle">
+        Fill the customer details to predict whether they are likely to purchase vehicle insurance.
+    </p>
+
+    <form method="POST" action="/">
+
+        <div class="form-group">
+            <label>Gender</label>
+            <select name="Gender" required>
+                <option value="">Select Gender</option>
+                <option value="1">Male</option>
+                <option value="0">Female</option>
+            </select>
+        </div>
+
+        <div class="form-group">
+            <label>Age</label>
+            <input type="number" name="Age" placeholder="Enter Age" required>
+        </div>
+
+        <div class="form-group">
+            <label>Driving License</label>
+            <select name="Driving_License" required>
+                <option value="">Select</option>
+                <option value="1">Yes</option>
+                <option value="0">No</option>
+            </select>
+        </div>
+
+        <div class="form-group">
+            <label>Region Code</label>
+            <input type="number" name="Region_Code" placeholder="e.g. 28" required>
+        </div>
+
+        <div class="form-group">
+            <label>Previously Insured</label>
+            <select name="Previously_Insured" required>
+                <option value="">Select</option>
+                <option value="1">Yes</option>
+                <option value="0">No</option>
+            </select>
+        </div>
+
+        <div class="form-group">
+            <label>Annual Premium (₹)</label>
+            <input type="number" step="0.01" name="Annual_Premium" placeholder="Enter Premium" required>
+        </div>
+
+        <div class="form-group">
+            <label>Policy Sales Channel</label>
+            <input type="number" step="0.01" name="Policy_Sales_Channel" placeholder="Enter Channel Code" required>
+        </div>
+
+        <div class="form-group">
+            <label>Vintage (Days)</label>
+            <input type="number" name="Vintage" placeholder="Days with Company" required>
+        </div>
+
+        <div class="form-group">
+            <label>Vehicle Age &lt; 1 Year</label>
+            <select name="Vehicle_Age_lt_1_Year" required>
+                <option value="">Select</option>
+                <option value="1">Yes</option>
+                <option value="0">No</option>
+            </select>
+        </div>
+
+        <div class="form-group">
+            <label>Vehicle Age &gt; 2 Years</label>
+            <select name="Vehicle_Age_gt_2_Years" required>
+                <option value="">Select</option>
+                <option value="1">Yes</option>
+                <option value="0">No</option>
+            </select>
+        </div>
+
+        <div class="form-group">
+            <label>Vehicle Damaged Before</label>
+            <select name="Vehicle_Damage_Yes" required>
+                <option value="">Select</option>
+                <option value="1">Yes</option>
+                <option value="0">No</option>
+            </select>
+        </div>
+
+        <button type="submit">Predict Insurance</button>
+
+    </form>
+
+    {% if context %}
+    <div class="result">
+        <h2>{{ context }}</h2>
+    </div>
+    {% endif %}
+
+</div>
+
+</body>
+</html>

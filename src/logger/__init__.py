@@ -16,9 +16,6 @@ os.makedirs(log_dir_path, exist_ok=True)
 log_file_path = os.path.join(log_dir_path, LOG_FILE)
 
 def configure_logger():
-    """
-    Configures logging with a rotating file handler and a console handler.
-    """
     # Create a custom logger
     logger = logging.getLogger()
     logger.setLevel(logging.DEBUG)
